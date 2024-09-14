@@ -1,0 +1,125 @@
+:root {
+    --background-light: #f0f0f0;
+    --background-dark: #333;
+    --text-light: #333;
+    --text-dark: #fff;
+    --primary-color: #4CAF50;
+    --primary-hover: #45a049;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('background.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+    color: var(--text-light);
+    background-color: var(--background-light);
+    transition: background-color 0.3s, color 0.3s, background-image 0.3s;
+}
+
+body.dark-mode {
+    background-image: url('dark-background.jpg');
+    color: var(--text-dark);
+    background-color: var(--background-dark);
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    color: inherit;
+}
+
+p {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+canvas {
+    border: 2px solid #555;
+    cursor: crosshair;
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+}
+
+input[type="text"],
+input[type="color"],
+input[type="range"],
+input[type="button"],
+button {
+    padding: 8px;
+    margin-right: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    outline: none;
+    transition: background-color 0.3s ease, transform 0.2s;
+}
+
+button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--primary-hover);
+    transform: scale(1.05);
+}
+
+input[type="button"]:hover {
+    background-color: var(--primary-hover);
+    transform: scale(1.05);
+}
+
+#brush-preview {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: black;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#loading-spinner {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    color: #4CAF50;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 1000;
+    display: none;
+}
+
+.cursor-brush {
+    cursor: url('brush-icon.png'), auto;
+}
+
+.cursor-eraser {
+    cursor: url('eraser-icon.png'), auto;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    input[type="text"],
+    input[type="color"],
+    input[type="range"],
+    input[type="button"],
+    button {
+        margin-bottom: 10px;
+    }
+}
